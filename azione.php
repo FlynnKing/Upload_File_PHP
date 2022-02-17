@@ -1,5 +1,9 @@
 
 <?php
+
+
+
+
 $nomefile = $_POST["nome"];
 $target_dir = "immagini/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -7,6 +11,9 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 $new_target_file = $target_dir.$nomefile.'.'.$imageFileType;
+
+
+
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {

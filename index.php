@@ -25,13 +25,22 @@
 
         <div class="row">
             <?php
+            $target_dir = "immagini/"; //cartella
+            $images = glob($target_dir."*.{jpg,jpeg,png}",GLOB_BRACE);
+            
+            
+            
+            foreach ($images as $value){
 
-            $directory = "immagini";
-            $images = glob($directory . "/*.*");
-
-            foreach($images as $image){
-                echo '<img src="'.$image.'"><br>';
-            }
+                echo '<div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="'.$value.'" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">'.basename($value).'</h5>
+                    <p class="card-text">cazzo</p>
+                    <a href="#" class="btn btn-primary">Elimina</a>
+                </div>
+                </div>';
+                }
 
             ?>
 
